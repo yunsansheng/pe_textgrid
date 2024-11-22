@@ -696,7 +696,7 @@ class TextGrid(object):
         """
         if encoding is None:
             encoding = detectEncoding(f)
-        with codecs.open(f, 'r', encoding=encoding) as source:
+        with open(f, 'r', encoding=encoding) as source:
             file_type, short = parse_header(source)
             if file_type != 'TextGrid':
                 raise TextGridError('The file could not be parsed as a TextGrid as it is lacking a proper header.')
@@ -797,7 +797,7 @@ class TextGrid(object):
                     print('\t\t\t\ttime = {0}'.format(point.time), file=sink)
                     mark = _formatMark(point.mark)
                     print('\t\t\t\tmark = "{0}"'.format(mark), file=sink)
-        sink.close()
+        # sink.close()
 
     # alternative constructor
 
