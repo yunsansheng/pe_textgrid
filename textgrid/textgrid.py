@@ -366,7 +366,7 @@ class PointTier(object):
         file indicated by string f
         """
         encoding = detectEncoding(f)
-        with codecs.open(f, 'r', encoding=encoding) as source:
+        with open(f, 'r', encoding=encoding) as source:
             file_type, short = parse_header(source)
             if file_type != 'TextTier':
                 raise TextGridError('The file could not be parsed as a PointTier as it is lacking a proper header.')
@@ -399,7 +399,7 @@ class PointTier(object):
             print('\ttime = {0}'.format(point.time), file=sink)
             mark = _formatMark(point.mark)
             print('\tmark = "{0}"'.format(mark), file=sink)
-        sink.close()
+        # sink.close()
 
     def bounds(self):
         return (self.minTime, self.maxTime or self.points[-1].time)
