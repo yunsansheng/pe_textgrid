@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='TextGrid',
+    name='petextgrid',
     version='0.0.1',
     author='blank',
     author_email='shanandone@qq.com',
